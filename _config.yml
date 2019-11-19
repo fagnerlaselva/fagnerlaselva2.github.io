@@ -1,24 +1,115 @@
-title:              fagner la selva
-email:              fagnerlaselva@gmail.com
-description:        A Blog Theme by Start Bootstrap
-author:             fagner la selva
-baseurl:            "/"
-url:                "/"
+#-------------------------------
+# General Site Settings
 
-# Social Profiles
-twitter_username:   fagnerlaselva
-github_username:    fagnerlaselva
-facebook_username:  fagnerlaselva
-linkedin_username: fagnerlaselva
+title: Fagner La Selva | Front-end Developer Design
+logo: logo.png # You can add own logo
+description: Front-end Developer Design # Add your awesome description
+baseurl: "" # The subpath of your site, e.g. /blog
+url: "" # The base hostname & protocol for your site, e.g. http://example.com
 
-# Add your google-analytics ID here to activate google analytics
-google_analytics:   UA-XXXXXXXXX-X # out your google-analytics code
+# Preloader
+preloader: true # To disable preloader change value to false
 
+menu:
+  - url: /
+    name: Home
+  - url: /about/
+    name: sobre
+  - url: /categories/
+    name: Categorias
+  - url: /contact/
+    name: Contato
+
+# *** NOTE ***
+# You can add submenus. For example:
+
+#  menu:
+#  - url: /
+#    name: Home
+#  - url: /travel/
+#    name: Travel
+#     submenu:
+#      - url: /peru/
+#        name: Peru
+# ----------------------------------
+
+layout_home_page: true # Homepage layout ( two layout is available, you can set the another layout by change the value of layout_home_page "true" to "false")
+
+featured-post-slider: true # You can enable or disable the featured-post-slider using true or false values.
+
+#-------------------------------
+# Hero Section
+hero:
+  hero-subtitle: Sou um diretor de arte interativo freelancer com sede na França, com foco em branding e identidade, digital e impressa.
+  hero-banner: banner-img.png # Add your banner image '/assets/images/'
+
+#-------------------------------
+# Author Settings
+author:
+  name: Fagner La Selva
+
+#-------------------------------
+# Contact Info
+contact:
+  email: fagnerlaselva@gmail.com
+  phone: +11 9 58248489
+  address:
+    city: Floripa
+    street: Campeche
+
+# Contact Form
+contact-form: fagnerlaselva@gmail.com
+
+# Social links
+social:
+- {icon: "ti-facebook", link: "#"}
+- {icon: "ti-twitter-alt", link: "#"}
+- {icon: "ti-linkedin", link: "#"}
+- {icon: "ti-github", link: "#"}
+
+#-------------------------------
+# Comment Section (Disqus)
+disqus-identifier: # Add your shortname for Disqus Comment. For example mr-brown
+
+#-------------------------------
+# Instagram Feed
+instafeed: true # To enable the instafeed, use the value true. To turn off use the value false.
+userID: 4044026246
+accessToken: 4044026246.1677ed0.8896752506ed4402a0519d23b8f50a17
+
+#-------------------------------
+# Google Analytics
+google-analytics: # Add your identifier. For example UA-99631805-1.
+
+#-------------------------------
 # Build settings
-markdown:           kramdown
-paginate:           5
-paginate_path:      "/posts/page:num/"
+markdown: kramdown
+permalink: pretty
 plugins:
-  - jekyll-feed
   - jekyll-paginate
-  - jekyll-sitemap ## Uncomment this line to silently generate a sitemaps.org compliant sitemap for your Jekyll site
+  - jekyll-sitemap
+  - jekyll/tagging
+
+paginate: 10
+paginate_path: "/page/:num"
+
+# Pages Path
+defaults:
+  - scope:
+      path: '_pages'
+    values:
+      permalink: /:basename:output_ext
+
+include:
+  - _pages
+
+# Tags
+tag_page_dir:         tag
+tag_page_layout:      tag_page
+tag_permalink_style:  pretty
+
+# Exclude from processing.
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - vendor
